@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --config webpack.production.config.js",
+    "dev": "webpack --config webpack.dev.config.js"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
