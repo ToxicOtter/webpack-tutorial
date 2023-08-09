@@ -29,6 +29,12 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
                 ]
+            },
+            {
+                test: /\.hbs$/,
+                use: [
+                    'handlebars-loader'
+                ]
             }
         ]
     },
@@ -40,9 +46,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Hello World',
-            meta: {
-                description: 'Página usada para exemplificar as funcionalidades básicas do webpack'
-            }
+            template: 'src/index.hbs',
+            description: 'Página usada para exemplificar as funcionalidades básicas do webpack'
         })
     ]
 }
