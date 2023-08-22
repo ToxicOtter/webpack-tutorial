@@ -3,9 +3,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'hello-world': './src/hello-world.js',
+        'spider': './src/spider.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
         publicPath: ''
     },
@@ -49,8 +52,17 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
+            filename: 'hello-world.html',
+            chunks: ['hello-world'],
             title: 'Hello World',
-            template: 'src/index.hbs',
+            template: 'src/page-template.hbs',
+            description: 'Página usada para exemplificar as funcionalidades básicas do webpack'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'spider.html',
+            chunks: ['spider'],
+            title: 'Spider',
+            template: 'src/page-template.hbs',
             description: 'Página usada para exemplificar as funcionalidades básicas do webpack'
         })
     ]

@@ -17,6 +17,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "handlebars": "^4.7.8"
+    "handlebars": "^4.7.8",
+    "react": "^18.2.0"
   }
 }
