@@ -4,10 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        'hello-world': './src/hello-world.js',
-        'spider': './src/spider.js'
-    },
+    entry: './src/spider.js',
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
@@ -24,12 +21,6 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 type: 'asset/resource'
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader'
-                ]
             },
             {
                 test: /\.scss$/,
@@ -51,16 +42,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'hello-world.html',
-            chunks: ['hello-world'],
-            title: 'Hello World',
-            template: 'src/page-template.hbs',
-            description: 'Página usada para exemplificar as funcionalidades básicas do webpack',
-            minify: false
-        }),
-        new HtmlWebpackPlugin({
             filename: 'spider.html',
-            chunks: ['spider'],
             title: 'Spider',
             template: 'src/page-template.hbs',
             description: 'Página usada para exemplificar as funcionalidades básicas do webpack',
