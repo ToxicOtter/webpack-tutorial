@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/static/'
+        publicPath: 'auto'
     },
     mode: 'production',
     optimization: {
@@ -50,8 +50,9 @@ module.exports = {
         }),
         new ModuleFederationPlugin({
             name: 'SpiderApp',
-            remotes: {
-                HelloWorldApp: 'HelloWorldApp@http://localhost:9001/remoteEntry.js'
+            filename: 'remoteEntry.js',
+            exposes: {
+                './SpiderPage': './src/components/spider-page/spider-page.js'
             }
         })
     ]

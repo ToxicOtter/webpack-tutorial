@@ -8,7 +8,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: ''
+        publicPath: 'auto'
     },
     mode: 'development',
     devServer: {
@@ -51,8 +51,9 @@ module.exports = {
         }),
         new ModuleFederationPlugin({
             name: 'SpiderApp',
-            remotes: {
-                HelloWorldApp: 'HelloWorldApp@http://localhost:9001/remoteEntry.js'
+            filename: 'remoteEntry.js',
+            exposes: {
+                './SpiderPage': './src/components/spider-page/spider-page.js'
             }
         })
     ]
