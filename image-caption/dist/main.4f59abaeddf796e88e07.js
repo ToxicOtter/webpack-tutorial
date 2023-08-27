@@ -1,0 +1,1 @@
+(()=>{"use strict";(new class{render(e){const n=document.createElement("p");n.innerHTML=e,n.classList.add("image-caption"),document.querySelector("body").appendChild(n)}}).render("Dois homens aranhas")})();

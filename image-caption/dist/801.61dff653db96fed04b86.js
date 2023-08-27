@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[801],{801:(e,c,n)=>{n.r(c),n.d(c,{default:()=>s});class s{render(e){const c=document.createElement("p");c.innerHTML=e,c.classList.add("image-caption"),document.querySelector("body").appendChild(c)}}}}]);
