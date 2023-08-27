@@ -53,6 +53,9 @@ module.exports = {
             filename: 'remoteEntry.js',
             exposes: {
                 './SpiderPage': './src/components/spider-page/spider-page.js'
+            },
+            remotes: {
+                ImageCaptionApp: 'ImageCaptionApp@http://localhost:9003/remoteEntry.js'
             }
         })
     ]

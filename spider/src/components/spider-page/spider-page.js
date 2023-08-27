@@ -7,5 +7,12 @@ export default class SpiderPage {
         heading.render('Spider');
         const spiderImage = new SpiderImage();
         spiderImage.render();
+
+        import('ImageCaptionApp/ImageCaption')
+            .then(ImageCaptionModule => {
+                const ImageCaption = ImageCaptionModule.default;
+                const imageCaption = new ImageCaption();
+                imageCaption.render('Dois homens aranhas');
+            });
     }
 }

@@ -1,8 +1,4 @@
-import Heading from './components/heading/heading.js';
-import SpiderImage from './components/spider-image/spider-image.js';
+import SpiderPage from "./components/spider-page/spider-page";
 
-const heading = new Heading();
-heading.render('Spider');
-const spiderImage = new SpiderImage();
-spiderImage.render();
-
+const spiderPage = new SpiderPage();
+spiderPage.render();
